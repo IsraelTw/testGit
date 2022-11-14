@@ -8,13 +8,16 @@ const exe = util.promisify(exec);
     try {
         // await exe('git pull');
         // execSync('git add .');
-        await exe('git add .');
+        const add = await exe('git add .');
+        console.log(add);
         const { commit } = await inquirer.prompt([{ type: 'input', message: 'enter commit', name: 'commit' }]);
-        console.log(commit);
         // execSync(`git commit -m "${commit}"`);
-        await exe(`git commit -m "${commit}"`);
+        const comm = await exe(`git commit -m "${commit}"`);
+        console.log(comm);
+
         // execSync(`git push`);
-        await exe(`git push`);
+        const push = await exe(`git push`);
+        console.log(push);
     }
     catch (err) {
         console.error(err);
