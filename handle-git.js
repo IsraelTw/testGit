@@ -7,7 +7,7 @@ import inquirer from 'inquirer';
         execSync('git add .');
         const { commit } = await inquirer.prompt([{ type: 'input', message: 'enter commit', name: 'commit' }]);
         console.log(commit);
-        execSync(`git commit -m ${commit}`);
+        execSync(`git commit -m ${commit.toString()}`);
         execSync(`git push`);
     }
     catch (err) {
