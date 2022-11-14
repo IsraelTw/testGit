@@ -9,15 +9,15 @@ const exe = util.promisify(exec);
         // await exe('git pull');
         // execSync('git add .');
         const add = await exe('git add .');
-        console.log(add);
+        console.log(add.stdout);
         const { commit } = await inquirer.prompt([{ type: 'input', message: 'enter commit', name: 'commit' }]);
         // execSync(`git commit -m "${commit}"`);
         const comm = await exe(`git commit -m "${commit}"`);
-        console.log(comm);
+        console.log(comm.stdout);
 
         // execSync(`git push`);
         const push = await exe(`git push`);
-        console.log(push);
+        console.log(push.stdout);
     }
     catch (err) {
         console.error(err);
