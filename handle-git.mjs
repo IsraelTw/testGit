@@ -12,8 +12,7 @@ const exe = util.promisify(exec);
         const comm = await exe(`git commit -m "${commit}"`);
         console.log(comm.stdout);
         const push = await exe(`git push`);
-        console.log(push);
-        console.log(push.stdout);
+        console.log(push.stdout || push.stderr);
     }
     catch (err) {
         console.error(err.stdout || err.stderr || err);
