@@ -7,9 +7,10 @@ const exe = util.promisify(exec);
 (async () => {
     try {
         const pull = await exe('git pull');
+        console.log('git pull');
         console.log(pull.stdout);
         const add = await exe('git add .');
-        console.log('git pull');
+        console.log('git add .');
         console.log(add.stdout);
         const { commit } = await inquirer.prompt([{ type: 'input', message: 'enter commit', name: 'commit' }]);
         const comm = await exe(`git commit -m "${commit}"`);
