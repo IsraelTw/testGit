@@ -13,7 +13,7 @@ const exe = util.promisify(exec);
         console.log(comm);
         console.log(comm.stdout);
         // const push = await exe(`git push`);
-        console.log(push.stdout || push.stderr);
+        // console.log(push.stdout || push.stderr);
     }
     catch (err) {
         console.error(err.stdout || err.stderr || err);
