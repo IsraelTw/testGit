@@ -20,6 +20,6 @@ const exe = util.promisify(exec);
         console.log(push.stdout);
     }
     catch (err) {
-        console.error(err);
+        console.error(err.stdout || err.stderr);
     }
 })();
