@@ -8,7 +8,7 @@ for (let i = 2; i < arg.length; i++) {
     commit += ' ' + el;
 }
 
-console.log(commit);
+console.log(commit)
 
 execSync(`git pull`);
 execSync(`git add .`);
